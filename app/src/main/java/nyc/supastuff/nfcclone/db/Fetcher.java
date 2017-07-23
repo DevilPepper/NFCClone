@@ -2,15 +2,16 @@ package nyc.supastuff.nfcclone.db;
 
 import android.graphics.Bitmap;
 
+import java.util.List;
 import java.util.ArrayList;
 
-/**
- * Created by Stuff on 7/11/2017.
- */
-
 public class Fetcher {
-    public static ArrayList<Bitmap> getData()
+    public static ArrayList<String> getData()
     {
-        return new ArrayList<Bitmap>();
+        ArrayList<String> data = new ArrayList<>();
+        data.add("Android");
+        data.add("Studio");
+        //return new ArrayList<Bitmap>();
+        return data;
     }
 }

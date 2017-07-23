@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">NFCClone</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_card_emitter">CardEmitter</string>
+    <string name="title_delete">Delete</string>
+    <string name="title_camera">Take Photo</string>
+    <string name="title_scan">Copy Card</string>
+    <string name="emitting_card">Emitting Card</string>
+    <string name="placeholder">placeholder</string>
 </resources>
