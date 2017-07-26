@@ -7,4 +7,10 @@
     <string name="title_scan">Copy Card</string>
     <string name="emitting_card">Emitting Card</string>
     <string name="placeholder">placeholder</string>
+
+    <string name="title_activity_camera">CameraActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="title_activity_card_copy">CardCopyActivity</string>
+    <string name="copy_message">Tap the NFC card to copy</string>
 </resources>
