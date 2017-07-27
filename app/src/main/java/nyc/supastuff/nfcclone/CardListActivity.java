@@ -19,12 +19,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import nyc.supastuff.nfcclone.db.Fetcher;
+import nyc.supastuff.nfcclone.db.NFCCard;
 
 public class CardListActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        final Context that = this.getApplicationContext();
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_card_list);
@@ -38,12 +38,12 @@ public class CardListActivity extends AppCompatActivity {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
 
-                Intent cardLoad = new Intent(that, CardEmitterActivity.class);
-                that.startActivity(cardLoad);
+                Intent cardLoad = new Intent(getApplicationContext(), CardEmitterActivity.class);
+                startActivity(cardLoad);
             }
         });
 
-        List<String> list = Fetcher.getData();
+        List<NFCCard> list = Fetcher.getData();
 
         System.err.println("The list!!");
         System.err.println(list);
@@ -59,14 +59,15 @@ public class CardListActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, final View view,
                                     int position, long id) {
-                view.animate().setDuration(2000).alpha(0)
-                        .withEndAction(new Runnable() {
-                            @Override
-                            public void run() {
-                                Intent cardLoad = new Intent(that, CardEmitterActivity.class);
-                                that.startActivity(cardLoad);
-                            }
-                        });
+
+                NFCCard card = (NFCCard) parent.getItemAtPosition(position);
+
+                Intent cardLoad = new Intent(getApplicationContext(), CardEmitterActivity.class);
+                Bundle b = new Bundle();
+                int cardId = card.getId();
+                b.putInt("id", cardId);
+                cardLoad.putExtras(b);
+                startActivity(cardLoad);
             }
 
         });
