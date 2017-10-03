@@ -4,7 +4,7 @@ import android.arch.persistence.room.Database;
 import android.arch.persistence.room.Room;
 import android.arch.persistence.room.RoomDatabase;
 import android.content.Context;
-
+//http://blog.iamsuleiman.com/android-architecture-components-tutorial-room-livedata-viewmodel/
 @Database(entities = {CardModel.class}, version = 1)
 public abstract class CardoDB extends RoomDatabase {
     private static CardoDB INSTANCE;
